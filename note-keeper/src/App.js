@@ -1,67 +1,53 @@
-// starting our App.js file
 import React from 'react';
-
-//our components....
 import NotesApp from './components/Notes';
 import Main from './components/ToDo';
 import CalendarApp from './components/Calendar';
 import FavoriteLinks from './components/Favorites';
 import Header from './layout/Header';
-import Clip from './layout/Clips';
-
-// Our Router components for DOM navigation.
-import { BrowserRouter, Route } from 'react-router-dom';
-
-// Our React-BootStrap components
+import Clip from './layout/clips';
+import { BrowserRouter, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
 import {Container, Col, Row} from 'react-bootstrap';
 
-// main App component
 function App() {
-    return (
-      <div className="App">
-        <Container>
-          <Row>
+  return (
+    <div className="App">
+      <Container>
+        <Row>
+        <header className="App-header">
+              <Clip /> 
+          </header>
           <header className="App-header">
-                //will show our clip image (optional add-in)
-                <Clip /> 
-            </header>
-            <header className="App-header">
-                //will show our page title
-                <Header /> 
-            </header>
-          </Row>
-          <Row>
-              <Col className="col-12 col-md-6 col-lg-6"> 
-                //will show our notes section
-                <BrowserRouter>
-                  <Route path="/" component={NotesApp}/> 
-                </BrowserRouter>
-              </Col>
-              <Col className="col-12 col-md-6 col-lg-6">  
-                //will show our to-do section              
-                <BrowserRouter>
-                  <Route path="/" component={Main}/> 
-                </BrowserRouter>
-              </Col>
-          </Row>
-          <Row>
+              <Header /> 
+          </header>
+        </Row>
+        <Row>
             <Col className="col-12 col-md-6 col-lg-6"> 
-              //will show our favorites section
               <BrowserRouter>
-                <Route path="/" component={FavoriteLinks}/> 
+                <Route path="/" component={NotesApp}/>
               </BrowserRouter>
             </Col>
-            <Col className="col-12 col-md-6 col-lg-6"> 
-              //will show our calender section
+            <Col className="col-12 col-md-6 col-lg-6">  
               <BrowserRouter>
-                  <CalenderApp />  
+                <Route path="/" component={Main}/>
               </BrowserRouter>
             </Col>
-          </Row>
-        </Container>
-      </div>
-    );
-  }
-  
-//exports the App component to be used in index.js
+        </Row>
+        <Row>
+          <Col className="col-12 col-md-6 col-lg-6"> 
+            <BrowserRouter>
+              <Route path="/" component={FavoriteLinks}/>
+            </BrowserRouter>
+          </Col>
+          <Col className="col-12 col-md-6 col-lg-6"> 
+            <BrowserRouter>
+                <CalendarApp /> 
+            </BrowserRouter>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+}
+
 export default App;

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {Container, Row} from 'react-bootstrap';
 
 function Header() {
@@ -7,7 +7,7 @@ function Header() {
             <Row>
                 <div className="Header">
                     <h1 className="app-title">
-                        //
+                        
                         <span className ='pixels'> pxn </span>
                         Pocket Book 
                         <span className='pixels'> cli </span>
