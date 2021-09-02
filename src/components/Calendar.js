@@ -1,6 +1,6 @@
 //Calender.js
 import React, {useState} from 'react'
-import Calendar from 'react-calendar'
+import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 //calender that will be shown on our main page
